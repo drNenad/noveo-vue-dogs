@@ -1,18 +1,26 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    Home
+    <cards-list
+      v-if="getImagesForHome.length"
+      :items="getImagesForHome"
+      :is-fetch-random-image-if-empty="true"
+      :is-infinite-scroll="true"
+    />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import CardsList from '@/components/blocks/grid/CardsList';
+import { mapGetters } from 'vuex';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    HelloWorld
+    CardsList
+  },
+  computed: {
+    ...mapGetters(['getImagesForHome'])
   }
 };
 </script>

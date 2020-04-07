@@ -1,0 +1,1 @@
+export { breedsService } from './breeds';

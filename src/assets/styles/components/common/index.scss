@@ -1,0 +1,28 @@
+.toggle-nav {
+  display: block;
+  width: 36px;
+  cursor: pointer;
+
+  &:before, &:after {
+    background-color: $dark-blue;
+    content: '';
+    display: block;
+    height: 4px;
+    transition: all 200ms ease-in-out;
+  }
+  &:before {
+    box-shadow: 0 10px 0 $dark-blue;
+    margin-bottom: 16px;
+  }
+
+  &.open {
+    &:before {
+      box-shadow: 0 0 0 $dark-blue;
+      transform: translateY(10px) rotate(45deg);
+    }
+
+    &:after {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+  }
+}
